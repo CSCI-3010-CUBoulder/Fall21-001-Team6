@@ -1,5 +1,4 @@
 /* String functions section */
-
 // Splits a single string on separator into a vector of strings
 std::vector<std::string> Split(std::string whole, std::string separator);
 
@@ -18,7 +17,15 @@ std::vector<int> MatchVectors(std::vector<int> a, std::vector<int> b);
 
 // divides an input integer by 2 until it is impossible to do so, then returns the final number.
 // (16 = 2 * 2 * 2 * 2 * 1 -> 1, 7 -> 7, 26 = 2 * 13 -> 13, 52 = 2 * 2 * 13 -> 13)
-int RemoveTwos(int original);
+int RemoveTwos(int original){
+    if (original % 2 == 0){
+        original = original/2;
+    }
+    else{
+        return original;
+    }
+    
+}
 
 // takes a vector of integers and removes all elements evenly divisible by the passed in int
 std::vector<int> MultiplesFilter(std::vector<int>, int divides_by);
@@ -80,7 +87,13 @@ std::vector<bool> LessMask(std::vector<int> nums, int less_than);
 double Sum(std::vector<double> nums);
 
 // Multiplies all numbers in a vector together and returns the resulting value
-double Product(std::vector<double> nums);
+double Product(std::vector<double> nums){
+    double sum = 1;
+    for (i=0; i<nums.size(); i++){
+        sum = sum * nums[i];
+    }
+    return sum;
+}
 
 // Adds an double n to each element of a given vector
 std::vector<double> VectorPlusN(std::vector<double> v, double n);

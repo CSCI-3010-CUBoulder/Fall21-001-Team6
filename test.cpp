@@ -3,10 +3,8 @@
 #include "functions_to_implement.cpp"
 #include <vector>
 
-TEST_CASE ( "Factorials are computed", "[factorial]") {
-  REQUIRE( Factorial(0) == 0 );
-  REQUIRE( Factorial(1) == 1 );
-  REQUIRE( Factorial(2) == 2 );
-  REQUIRE( Factorial(3) == 6 );
-  REQUIRE( Factorial(10) == 3628800 );
+TEST_CASE ( "Remove twos", "[removeTwos]") {
+  REQUIRE( RemoveTwos(7) == 7 );
+  REQUIRE( RemoveTwos(46) == 23 );
+  REQUIRE( RemoveTwos(92) == 23 );
 }

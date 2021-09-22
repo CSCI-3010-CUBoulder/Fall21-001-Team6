@@ -18,12 +18,10 @@ std::vector<int> MatchVectors(std::vector<int> a, std::vector<int> b);
 // divides an input integer by 2 until it is impossible to do so, then returns the final number.
 // (16 = 2 * 2 * 2 * 2 * 1 -> 1, 7 -> 7, 26 = 2 * 13 -> 13, 52 = 2 * 2 * 13 -> 13)
 int RemoveTwos(int original){
-    if (original % 2 == 0){
+    while(original % 2 == 0){
         original = original/2;
     }
-    else{
-        return original;
-    }
+    return original;
     
 }
 
@@ -89,7 +87,8 @@ double Sum(std::vector<double> nums);
 // Multiplies all numbers in a vector together and returns the resulting value
 double Product(std::vector<double> nums){
     double sum = 1;
-    for (i=0; i<nums.size(); i++){
+    int size = nums.size();
+    for (int i=0; i<size; i++){
         sum = sum * nums[i];
     }
     return sum;

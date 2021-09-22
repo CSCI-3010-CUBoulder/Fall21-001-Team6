@@ -4,11 +4,8 @@ CXXFLAGS = -std=c++17 -Wall  # sets the compiler to the 17th version and display
 # when user runs  make app we run both variables.
 all: test
 
-main: test.o functions_to_implement.cpp
-	$(CXX) $(CXXFLAGS) functions_to_implement.cpp test.o -o test 
-
-test.o: test.cpp
-	$(CXX) $(CXXFLAGS) -c test.cpp
+test: 
+	$(CXX) $(CXXFLAGS) test.cpp -o test 
 
 clean:
 	rm test.o functions_to_implement.o test

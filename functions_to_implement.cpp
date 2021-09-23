@@ -1,4 +1,7 @@
+#include <vector>
+#include <string>
 /* String functions section */
+
 // Splits a single string on separator into a vector of strings
 std::vector<std::string> Split(std::string whole, std::string separator);
 
@@ -18,11 +21,10 @@ std::vector<int> MatchVectors(std::vector<int> a, std::vector<int> b);
 // divides an input integer by 2 until it is impossible to do so, then returns the final number.
 // (16 = 2 * 2 * 2 * 2 * 1 -> 1, 7 -> 7, 26 = 2 * 13 -> 13, 52 = 2 * 2 * 13 -> 13)
 int RemoveTwos(int original){
-    while(original % 2 == 0){
+    while (original % 2 == 0){
         original = original/2;
     }
     return original;
-    
 }
 
 // takes a vector of integers and removes all elements evenly divisible by the passed in int
@@ -33,9 +35,6 @@ std::vector<bool> EvenMask(std::vector<int>);
 
 // returns a vector with true for odd numbers and false for even numbers
 std::vector<bool> OddMask(std::vector<int>);
-
-// Sums all numbers in a vector and returns the resulting value
-int Sum(std::vector<int> nums);
 
 // Multiplies all numbers in a vector together and returns the resulting value
 int Product(std::vector<int> nums);
@@ -59,8 +58,6 @@ int NthFibonacci(int n);
 // takes an int, n, and returns the factorial of that int (n!)
 int Factorial(int n);
 
-// returns -1 if the number is negative and 1 if positive
-int Sign(int num);
 
 // takes two vectors of doubles, a and b. The function then removes elements from a if they are also in b.
 // If the double is in b, but not in a, nothing happens.
@@ -82,17 +79,16 @@ std::vector<bool> GreaterMask(std::vector<int> nums, int greater_than);
 std::vector<bool> LessMask(std::vector<int> nums, int less_than);
 
 // Sums all numbers in a vector and returns the resulting value
-double Sum(std::vector<double> nums);
+double Sum(std::vector<double> nums){
+    double amount = 0;
+    for (double i: nums){
+        amount+=i;
+    }
+    return amount;
+}
 
 // Multiplies all numbers in a vector together and returns the resulting value
-double Product(std::vector<double> nums){
-    double sum = 1;
-    int size = nums.size();
-    for (int i=0; i<size; i++){
-        sum = sum * nums[i];
-    }
-    return sum;
-}
+double Product(std::vector<double> nums);
 
 // Adds an double n to each element of a given vector
 std::vector<double> VectorPlusN(std::vector<double> v, double n);
@@ -105,7 +101,14 @@ std::vector<double> VectorTimesN(std::vector<double> v, double n);
 std::vector<double> Multiples(double n, double m);
 
 // returns -1 if the number is negative and 1 if positive
-double Sign(double num);
+double Sign(double num){
+    if (num < 0){
+        return -1;
+    }
+    else {
+        return 1;
+    }
+}
 
 
 // adds n to each element of the vector
